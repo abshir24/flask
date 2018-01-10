@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>User Info</title>
+    </head>
+    <style> 
+        input{
+            display:block;
+        }
+    </style>
+
+    <body>
+        <form action='/info' method='post'>
+            <label for='fullname'>Your Name:</label>
+            <input type='text' name='fullname' placeholder='John Doe'>
+
+            <label for='school'>School:</label>
+            <input type='text' name='school' placeholder='Shoreline Community College'>
+
+            <label for='food'>Favorite food:</label>
+            <input type='text' name='food' placeholder='Vegan Sushi'>
+
+            <label for='funfact'>Fun Fact About Yourself:</label>
+            <textarea name="funfact"></textarea>
+            
+            <input type="submit" name="Submit Info">
+        </form>
+    </body>
+</html>
