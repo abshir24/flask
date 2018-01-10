@@ -1,0 +1,42 @@
+<style>
+    .success{
+        height:300px;
+        width:300px;
+        background-color:green
+    }
+    h1,button{
+        text-align:center;
+        position:relative;
+        color:white;
+        top:100px;
+    }
+
+    button{
+        margin-left:100px;
+    }
+
+    .fail{
+        height:300px;
+        width:300px;
+        background-color:red
+    }
+
+</style>
+
+<form action='/guess' method='post'>
+    <input type='number' name='guess'>
+    <input type='submit'>
+</form>
+{{session.randomnumber}}
+{% if session.message == "Too High!" or session.message == "Too Low!"%}
+    <div class="fail">
+        <h1>{{session.message}}</h1>
+    </div>
+{% elif session.message == "" %}
+    {{session.message}}
+{% else %}
+    <div class="success">
+        <h1>{{session.message}}</h1>
+        <button><a href="/">Play Again!</a></button>
+    </div>
+{% endif %}
